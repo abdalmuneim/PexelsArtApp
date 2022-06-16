@@ -1,13 +1,12 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-class NavigatorPop {
-  final BuildContext context;
-
-  NavigatorPop(this.context) {
-    pop(context);
-  }
+class NavigatorScreen {
 
   pop(ctx) {
     Navigator.of(ctx).pop();
+  }
+
+  push(ctx,{required screen}) {
+    Navigator.of(ctx).push(MaterialPageRoute(builder: (ctx) => screen));
   }
 }

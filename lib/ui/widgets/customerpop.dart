@@ -24,7 +24,7 @@ class CustomerPOP {
               content: Text(desc),
               actions: [
                 TextButton(
-                  onPressed: () => NavigatorPop(context),
+                  onPressed: () => NavigatorScreen().pop(context),
                   child: const Text(
                     'Cancel',
                     style: TextStyle(color: Colors.blue),
