@@ -8,22 +8,16 @@ import '../widgets/navigator.dart';
 import 'details.dart';
 
 class SearchScreen extends StatelessWidget {
-  const SearchScreen({Key? key, required this.data}) : super(key: key);
+  const SearchScreen({Key? key, required this.data,required this.worde,}) : super(key: key);
   final WallpaperModel? data;
-
+  final String worde;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
             appBar: AppBar(
-              title: SizedBox(
-                width: SizeConfig.screenWidth,
-                child: Form(
-                    child: TextFormField(
-                  decoration:
-                      const InputDecoration(suffixIcon: Icon(Icons.search)),
-                )),
-              ),
+              title: Text(word),
+              centerTitle: true,
             ),
             body: Container(
               margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
