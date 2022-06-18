@@ -17,14 +17,14 @@ class SearchViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<WallpaperModel?> resultSearch(context, String query) async {
+  Future<WallpaperModel?> resultSearch(context, String query,String worde) async {
     loading = true;
     SearchApi model = SearchApi();
     _wallpaper = await model.resultSearchApi(query);
     loading = false;
     print('_wallpaper: $_wallpaper');
     notifyListeners();
-    NavigatorScreen().push(context, screen: SearchScreen(data: _wallpaper));
+    NavigatorScreen().push(context, screen: SearchScreen(data: _wallpaper,worde:textEditingController));
     return _wallpaper;
   }
 
