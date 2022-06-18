@@ -8,9 +8,12 @@ A new Flutter project by Abdalmuneim Mahmoud.
 
 ## in this application You can .
 
-1. show image from [Pexels Art](https://www.pexels.com/api/)
+1. show image GridView from [Pexels Art](https://www.pexels.com/api/)
 2. Download image
+4. Search image   
 3. Add and Remove image to/from favorite SQL DB. 4 Search image
+
+######## GitHub [pexelart](https://github.com/abdalmuneim/PexelsArtApp)
 
 # packages used
 
