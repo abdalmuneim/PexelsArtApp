@@ -41,6 +41,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
           child: CustomScrollView(
             shrinkWrap: true,
             slivers: [
+
+              /// App Bar title
               SliverAppBar(
                 actions: [
                   IconButton(
@@ -92,6 +94,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 pinned: true,
                 expandedHeight: SizeConfig.screenHeight * 0.6,
               ),
+
+              /// screen body
               SliverList(
                 delegate: SliverChildListDelegate(
                   [

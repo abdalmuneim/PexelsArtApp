@@ -41,6 +41,8 @@ class _DetailsFavoriteScreenState extends State<DetailsFavoriteScreen> {
           child: CustomScrollView(
             shrinkWrap: true,
             slivers: [
+
+              /// App Bar title
               SliverAppBar(
                 actions: [
                   IconButton(
@@ -92,6 +94,8 @@ class _DetailsFavoriteScreenState extends State<DetailsFavoriteScreen> {
                 pinned: true,
                 expandedHeight: SizeConfig.screenHeight * 0.6,
               ),
+
+              /// screen body
               SliverList(
                 delegate: SliverChildListDelegate(
                   [
