@@ -37,7 +37,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Home Screen'),
+          title: const Text('WallpaperApp'),
           centerTitle: true,
           actions: [
             IconButton(
