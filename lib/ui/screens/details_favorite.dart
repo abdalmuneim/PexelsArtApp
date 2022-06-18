@@ -9,21 +9,21 @@ import '../../size_config.dart';
 import '../widgets/customerTextButton.dart';
 import '../widgets/imagenetwork.dart';
 
-class DetailsScreen extends StatefulWidget {
-  const DetailsScreen({Key? key, required this.data}) : super(key: key);
-  final Photo data;
+class DetailsFavoriteScreen extends StatefulWidget {
+  const DetailsFavoriteScreen({Key? key, required this.data}) : super(key: key);
+  final FavoriteModel data;
 
   @override
-  State<DetailsScreen> createState() => _DetailsScreenState();
+  State<DetailsFavoriteScreen> createState() => _DetailsFavoriteScreenState();
 }
 
-class _DetailsScreenState extends State<DetailsScreen> {
+class _DetailsFavoriteScreenState extends State<DetailsFavoriteScreen> {
   // late bool isFav;
 
   @override
   void initState() {
     final FavoriteViewModel getDataProv =
-        Provider.of<FavoriteViewModel>(context, listen: false);
+    Provider.of<FavoriteViewModel>(context, listen: false);
     getDataProv.getFavorite();
     getDataProv.favoriteList;
     getDataProv.isFav(widget.data.id);
@@ -33,7 +33,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
   @override
   Widget build(BuildContext context) {
     FavoriteViewModel geFavoriteProv =
-        Provider.of<FavoriteViewModel>(context,);
+    Provider.of<FavoriteViewModel>(context,);
     return SafeArea(
       child: Scaffold(
         body: Hero(
@@ -58,7 +58,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                               photographer: widget.data.photographer,
                               photographerUrl: widget.data.photographerUrl,
                               avgColor: widget.data.avgColor,
-                              original: widget.data.src.original,
+                              original: widget.data.original,
                               alt: widget.data.alt,
                             ),
                           );
@@ -85,7 +85,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     fontSize: 25,
                   ),
                   background: CustomerImageNetWork(
-                    url: widget.data.src.original,
+                    url: widget.data.original,
                   ),
                 ),
                 centerTitle: true,
@@ -163,7 +163,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             Provider.of<SaveImageViewModel>(context, listen: false).save(
-                widget.data.src.original,
+                widget.data.original,
                 name: "hello${widget.data.photographer}");
           },
           child: const Icon(Icons.download),
