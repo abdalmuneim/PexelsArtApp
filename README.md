@@ -14,24 +14,24 @@ A new Flutter project by Abdalmuneim Mahmoud.
 3. Add and Remove image to/from favorite SQL DB.
 4. using provider state management. 
 
-######## GitHub [pexelart](https://github.com/abdalmuneim/PexelsArtApp)
+## GitHub [pexelart](https://github.com/abdalmuneim/PexelsArtApp)
 
-# packages used
+## packages used
 
-    provider:
-    sqflite:
-    dio:
-    http:
-    permission_handler:
-    image_gallery_saver:
-    url_launcher:
-    font_awesome_flutter:
+[provider:]() 
+[sqflite:]() 
+[dio:]() 
+[http:]() 
+[permission_handler:]() 
+[image_gallery_saver:]() 
+[url_launcher:]() 
+[font_awesome_flutter:]() 
 
 ### Developer Data
 
-  name: Abdalmuneim Mahmoud 
-  phone no: 01117460853, 01557744649
-  CV: [Menm](https://drive.google.com/file/d/1qEJamZTd3EYZCGO_okDV1G4BzBe96Y9a/view?usp=sharing) 
+name: Abdalmuneim Mahmoud 
+phone no: 01117460853, 01557744649
+CV: [Mn3m_cv](https://drive.google.com/file/d/1qEJamZTd3EYZCGO_okDV1G4BzBe96Y9a/view?usp=sharing) 
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials, samples, guidance on
