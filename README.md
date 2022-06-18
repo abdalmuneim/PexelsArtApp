@@ -18,14 +18,14 @@ A new Flutter project by Abdalmuneim Mahmoud.
 
 ## packages used
 
-[provider:]() 
-[sqflite:]() 
-[dio:]() 
-[http:]() 
-[permission_handler:]() 
-[image_gallery_saver:]() 
-[url_launcher:]() 
-[font_awesome_flutter:]() 
+[provider:](https://pub.dev/packages/provider) 
+[sqflite:](https://pub.dev/packages/sqflite) 
+[dio:](https://pub.dev/packages/dio) 
+[http:](https://pub.dev/packages/http) 
+[permission_handler:](https://pub.dev/packages/permission_handler) 
+[image_gallery_saver:](https://pub.dev/packages/image_gallery_saver) 
+[url_launcher:](https://pub.dev/packages/url_launcher) 
+[font_awesome_flutter:](https://pub.dev/packages/font_awesome_flutter) 
 
 ### Developer Data
 
