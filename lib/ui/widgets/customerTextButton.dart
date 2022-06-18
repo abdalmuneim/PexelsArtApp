@@ -17,6 +17,7 @@ class CustomerTextButton extends StatelessWidget{
       ),
       child: Text(
         photographer,
+        textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: fontSize,
           color: Colors.white,

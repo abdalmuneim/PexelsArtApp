@@ -1,16 +1,28 @@
-# pexlesart
+# Wallpaper App For JOSEQUAL job task
 
-A new Flutter project.
+This project is a simple project with simple UI for JOSEQUAL Wallpaper Application job task 2.
+
+A new Flutter project by Abdalmuneim Mahmoud.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+## in this application You can .
 
-A few resources to get you started if this is your first Flutter project:
+1. show image from [Pexels Art](https://www.pexels.com/api/)
+2. Download image
+3. Add and Remove image to/from favorite SQL DB. 4 Search image
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# packages used
+
+    provider:
+    sqflite:
+    dio:
+    http:
+    permission_handler:
+    image_gallery_saver:
+    url_launcher:
+    font_awesome_flutter:
 
 For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[online documentation](https://docs.flutter.dev/), which offers tutorials, samples, guidance on
+mobile development, and a full API reference.

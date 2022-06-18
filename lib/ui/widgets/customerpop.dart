@@ -34,12 +34,14 @@ class CustomerPOP {
             ));
   }
 
-  popDialog(context, {required Widget title, required String desc}) {
+  popDialog(context,
+      {required Widget title, required String desc, List<Widget>? action}) {
     return showDialog(
         context: context,
         builder: (context) => AlertDialog(
-            title: title,
-            content: Text(desc),
-          ));
+              title: title,
+              content: Text(desc),
+              actions: action,
+            ));
   }
 }

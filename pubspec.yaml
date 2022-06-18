@@ -34,6 +34,10 @@ dependencies:
   font_awesome_flutter:
   loading_animation_widget:
   url_launcher:
+  permission_handler:
+  image_gallery_saver:
+  dio:
+  sqflite:
 
 
   # The following adds the Cupertino Icons font to your application.
