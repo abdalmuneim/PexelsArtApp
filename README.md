@@ -1,6 +1,6 @@
 # Wallpaper App For JOSEQUAL job task
 
-This project is a simple project with simple UI for JOSEQUAL Wallpaper Application job task 2.
+This project is a simple project with simple UI using provider state management for JOSEQUAL Wallpaper Application job task 2.
 
 A new Flutter project by Abdalmuneim Mahmoud.
 
@@ -12,6 +12,7 @@ A new Flutter project by Abdalmuneim Mahmoud.
 2. Download image
 4. Search image   
 3. Add and Remove image to/from favorite SQL DB.
+4. using provider state management. 
 
 ######## GitHub [pexelart](https://github.com/abdalmuneim/PexelsArtApp)
 
