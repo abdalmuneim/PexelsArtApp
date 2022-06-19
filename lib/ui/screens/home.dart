@@ -80,6 +80,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                           child: Stack(
                             alignment: Alignment.bottomCenter,
                             children: [
+                              /// Image viewer
                               SizedBox(
                                 width: SizeConfig.screenHeight,
                                 height: SizeConfig.screenHeight,
@@ -90,6 +91,8 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                                   ),
                                 ),
                               ),
+
+                              /// some details viewer
                               Container(
                                 alignment: Alignment.bottomCenter,
                                 width: SizeConfig.screenWidth,
@@ -122,6 +125,8 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                                   ],
                                 ),
                               ),
+
+
                             ],
                           ),
                         ),

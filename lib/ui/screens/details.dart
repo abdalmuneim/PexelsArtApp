@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pexlesart/ui/widgets/customerpop.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/view_model/favorite_view_model.dart';
@@ -33,7 +34,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
   @override
   Widget build(BuildContext context) {
     FavoriteViewModel geFavoriteProv =
-        Provider.of<FavoriteViewModel>(context,);
+        Provider.of<FavoriteViewModel>(context);
     return SafeArea(
       child: Scaffold(
         body: Hero(
@@ -46,12 +47,12 @@ class _DetailsScreenState extends State<DetailsScreen> {
               SliverAppBar(
                 actions: [
                   IconButton(
-                    onPressed: () async {
+                    onPressed: () {
                       if (geFavoriteProv.fav) {
                         geFavoriteProv.deleteFavorite(widget.data.id);
                       } else {
                         try {
-                          int value = await geFavoriteProv.addToFavorite(
+                           geFavoriteProv.addToFavorite(
                             favorite: FavoriteModel(
                               id: widget.data.id,
                               width: widget.data.width,
@@ -64,9 +65,13 @@ class _DetailsScreenState extends State<DetailsScreen> {
                               alt: widget.data.alt,
                             ),
                           );
-                          print('value: $value');
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                            content: Text("Add to favorite"),
+                            dismissDirection: DismissDirection.down,
+                            duration: Duration(milliseconds: 300),
+                          ));
                         } catch (e) {
-                          print('failed add to favorite!: $e');
+                          CustomerPOP().handleErrors(context, '$e');
                         }
                       }
                       setState(() {});
@@ -166,9 +171,9 @@ class _DetailsScreenState extends State<DetailsScreen> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Provider.of<SaveImageViewModel>(context, listen: false).save(
+            Provider.of<SaveImageViewModel>(context, listen: false).save(context,
                 widget.data.src.original,
-                name: "hello${widget.data.photographer}");
+                name: "${widget.data.photographer}${widget.data.id}");
           },
           child: const Icon(Icons.download),
         ),

@@ -23,7 +23,7 @@ class _DetailsFavoriteScreenState extends State<DetailsFavoriteScreen> {
   @override
   void initState() {
     final FavoriteViewModel getDataProv =
-    Provider.of<FavoriteViewModel>(context, listen: false);
+        Provider.of<FavoriteViewModel>(context, listen: false);
     getDataProv.getFavorite();
     getDataProv.favoriteList;
     getDataProv.isFav(widget.data.id);
@@ -32,8 +32,9 @@ class _DetailsFavoriteScreenState extends State<DetailsFavoriteScreen> {
 
   @override
   Widget build(BuildContext context) {
-    FavoriteViewModel geFavoriteProv =
-    Provider.of<FavoriteViewModel>(context,);
+    FavoriteViewModel geFavoriteProv = Provider.of<FavoriteViewModel>(
+      context,
+    );
     return SafeArea(
       child: Scaffold(
         body: Hero(
@@ -41,7 +42,6 @@ class _DetailsFavoriteScreenState extends State<DetailsFavoriteScreen> {
           child: CustomScrollView(
             shrinkWrap: true,
             slivers: [
-
               /// App Bar title
               SliverAppBar(
                 actions: [
@@ -167,8 +167,8 @@ class _DetailsFavoriteScreenState extends State<DetailsFavoriteScreen> {
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             Provider.of<SaveImageViewModel>(context, listen: false).save(
-                widget.data.original,
-                name: "hello${widget.data.photographer}");
+                context, widget.data.original,
+                name: "${widget.data.photographer}${widget.data.id}");
           },
           child: const Icon(Icons.download),
         ),

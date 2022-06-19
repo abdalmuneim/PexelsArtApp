@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:pexlesart/ui/widgets/customerpop.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class CustomerTextButton extends StatelessWidget{
-
+class CustomerTextButton extends StatelessWidget {
   final String photographer;
   final double fontSize;
   final String url;
 
-  const CustomerTextButton({Key? key, required this.photographer, required this.url, required this.fontSize}) : super(key: key);
+  const CustomerTextButton(
+      {Key? key,
+      required this.photographer,
+      required this.url,
+      required this.fontSize})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () async => await canLaunchUrl(
-        Uri.parse(url),
-      ),
+      onPressed: () => launcher(context),
       child: Text(
         photographer,
         textAlign: TextAlign.center,
@@ -27,5 +30,30 @@ class CustomerTextButton extends StatelessWidget{
     );
   }
 
-
+  launcher(BuildContext? context) async {
+    // Don't use canLaunch because of fbProtocolUrl (fb://)
+    try {
+      bool launched = await launch(
+        url,
+        forceSafariVC: true,
+        forceWebView: true,
+        enableJavaScript: true,
+      );
+      if (!launched) {
+        await launch(
+          url,
+          forceSafariVC: true,
+          forceWebView: true,
+          enableJavaScript: true,
+        );
+      }
+    } catch (e) {
+      await launch(
+        url,
+        forceSafariVC: true,
+        forceWebView: true,
+        enableJavaScript: true,
+      );
+    }
+  }
 }

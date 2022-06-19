@@ -1,9 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'package:pexlesart/ui/widgets/navigator.dart';
 import 'package:pexlesart/ui/widgets/some_widgets.dart';
 
+import 'navigator.dart';
+
 class CustomerPOP {
+
+  popDialog(context,
+      {required Widget title, required String desc, List<Widget>? action}) {
+    return showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: title,
+          content: Text(desc),
+          actions: action,
+        ));
+  }
+
   loadingWidget(context) {
     return popDialog(context,
         title:
@@ -31,17 +44,6 @@ class CustomerPOP {
                   ),
                 ),
               ],
-            ));
-  }
-
-  popDialog(context,
-      {required Widget title, required String desc, List<Widget>? action}) {
-    return showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-              title: title,
-              content: Text(desc),
-              actions: action,
             ));
   }
 }

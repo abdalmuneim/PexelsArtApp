@@ -31,13 +31,15 @@ dependencies:
     sdk: flutter
   provider:
   http:
-  font_awesome_flutter:
+  sqflite:
   loading_animation_widget:
   url_launcher:
   permission_handler:
-  image_gallery_saver:
   dio:
-  sqflite:
+  path_provider:
+  sn_progress_dialog:
+  font_awesome_flutter:
+#  image_gallery_saver:
 
 
   # The following adds the Cupertino Icons font to your application.

@@ -31,4 +31,8 @@ class CustomerImageNetWork extends StatelessWidget {
       },
     );
   }
+
+  imageViewer(context,{required String url}){
+    return NetworkImage(url,);
+  }
 }

@@ -8,9 +8,9 @@ import '../widgets/navigator.dart';
 import 'details.dart';
 
 class SearchScreen extends StatelessWidget {
-  const SearchScreen({Key? key, required this.data,required this.worde,}) : super(key: key);
+  const SearchScreen({Key? key, required this.data,required this.word,}) : super(key: key);
   final WallpaperModel? data;
-  final String worde;
+  final String word;
   @override
   Widget build(BuildContext context) {
     return SafeArea(

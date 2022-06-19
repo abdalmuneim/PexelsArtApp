@@ -32,7 +32,7 @@ class FavoriteViewModel extends ChangeNotifier {
   late bool fav;
 
   bool isFav(int id) {
-    notifyListeners();
+    // notifyListeners();
     return fav = favoriteList.any((meal) => meal.id == id);
   }
 }
