@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pexlesart/core/view_model/curent_wallpaper_view_model.dart';
 import 'package:pexlesart/ui/screens/favorite.dart';
-import 'package:pexlesart/ui/screens/search.dart';
 import 'package:pexlesart/ui/widgets/customerpop.dart';
 import 'package:provider/provider.dart';
-import '../../core/api/api_services/get_curent_image.dart';
 import '../../core/view_model/search_view_model.dart';
-import '../../models/wallpaper_model.dart';
 import '../../size_config.dart';
-import '../widgets/customerTextButton.dart';
+import '../widgets/customer_text_button.dart';
 import '../widgets/imagenetwork.dart';
 import '../widgets/navigator.dart';
 import 'details.dart';

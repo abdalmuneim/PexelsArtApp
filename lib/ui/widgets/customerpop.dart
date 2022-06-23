@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:pexlesart/ui/widgets/some_widgets.dart';
 
 import 'navigator.dart';
@@ -17,12 +16,12 @@ class CustomerPOP {
         ));
   }
 
-  loadingWidget(context) {
-    return popDialog(context,
-        title:
-            LoadingAnimationWidget.hexagonDots(size: 30, color: Colors.black),
-        desc: '');
-  }
+  // loadingWidget(context) {
+    // return popDialog(context,
+        // title:
+            // LoadingAnimationWidget.hexagonDots(size: 30, color: Colors.black),
+        // desc: '');
+  // }
 
   handleErrors(BuildContext context, String desc) {
     return showDialog(

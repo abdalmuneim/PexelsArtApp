@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pexlesart/models/wallpaper_model.dart';
 import 'package:pexlesart/size_config.dart';
 
-import '../widgets/customerTextButton.dart';
+import '../widgets/customer_text_button.dart';
 import '../widgets/imagenetwork.dart';
 import '../widgets/navigator.dart';
 import 'details.dart';

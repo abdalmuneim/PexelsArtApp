@@ -4,9 +4,8 @@ import 'package:provider/provider.dart';
 import '../../core/view_model/favorite_view_model.dart';
 import '../../core/view_model/save_image_view_model.dart';
 import '../../models/favorit_model.dart';
-import '../../models/wallpaper_model.dart';
 import '../../size_config.dart';
-import '../widgets/customerTextButton.dart';
+import '../widgets/customer_text_button.dart';
 import '../widgets/imagenetwork.dart';
 
 class DetailsFavoriteScreen extends StatefulWidget {
@@ -167,8 +166,9 @@ class _DetailsFavoriteScreenState extends State<DetailsFavoriteScreen> {
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             Provider.of<SaveImageViewModel>(context, listen: false).save(
-                context, widget.data.original,
-                name: "${widget.data.photographer}${widget.data.id}");
+              context,
+              widget.data.original,
+            );
           },
           child: const Icon(Icons.download),
         ),

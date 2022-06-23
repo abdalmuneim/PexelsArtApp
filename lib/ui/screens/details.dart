@@ -7,7 +7,7 @@ import '../../core/view_model/save_image_view_model.dart';
 import '../../models/favorit_model.dart';
 import '../../models/wallpaper_model.dart';
 import '../../size_config.dart';
-import '../widgets/customerTextButton.dart';
+import '../widgets/customer_text_button.dart';
 import '../widgets/imagenetwork.dart';
 
 class DetailsScreen extends StatefulWidget {
@@ -19,7 +19,8 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
-  // late bool isFav;
+  late bool isFav;
+
 
   @override
   void initState() {
@@ -27,14 +28,13 @@ class _DetailsScreenState extends State<DetailsScreen> {
         Provider.of<FavoriteViewModel>(context, listen: false);
     getDataProv.getFavorite();
     getDataProv.favoriteList;
-    getDataProv.isFav(widget.data.id);
+   isFav = getDataProv.isFav(widget.data.id);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    FavoriteViewModel geFavoriteProv =
-        Provider.of<FavoriteViewModel>(context);
+    FavoriteViewModel geFavoriteProv = Provider.of<FavoriteViewModel>(context,listen: false);
     return SafeArea(
       child: Scaffold(
         body: Hero(
@@ -42,7 +42,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
           child: CustomScrollView(
             shrinkWrap: true,
             slivers: [
-
               /// App Bar title
               SliverAppBar(
                 actions: [
@@ -50,9 +49,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     onPressed: () {
                       if (geFavoriteProv.fav) {
                         geFavoriteProv.deleteFavorite(widget.data.id);
+                        geFavoriteProv.isFav(widget.data.id);
                       } else {
                         try {
-                           geFavoriteProv.addToFavorite(
+                          geFavoriteProv.addToFavorite(
                             favorite: FavoriteModel(
                               id: widget.data.id,
                               width: widget.data.width,
@@ -65,7 +65,9 @@ class _DetailsScreenState extends State<DetailsScreen> {
                               alt: widget.data.alt,
                             ),
                           );
-                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          geFavoriteProv.isFav(widget.data.id);
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(const SnackBar(
                             content: Text("Add to favorite"),
                             dismissDirection: DismissDirection.down,
                             duration: Duration(milliseconds: 300),
@@ -74,10 +76,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           CustomerPOP().handleErrors(context, '$e');
                         }
                       }
-                      setState(() {});
+                        geFavoriteProv.isFav(widget.data.id);
                     },
                     icon: Icon(
-                      geFavoriteProv.fav
+                      Provider.of<FavoriteViewModel>(context).fav
                           ? Icons.favorite
                           : Icons.favorite_border,
                       size: 30,
@@ -171,9 +173,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Provider.of<SaveImageViewModel>(context, listen: false).save(context,
-                widget.data.src.original,
-                name: "${widget.data.photographer}${widget.data.id}");
+            Provider.of<SaveImageViewModel>(context, listen: false).save(
+              context,
+              widget.data.src.original,
+            );
           },
           child: const Icon(Icons.download),
         ),
