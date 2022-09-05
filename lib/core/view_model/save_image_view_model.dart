@@ -6,6 +6,7 @@ import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:sn_progress_dialog/sn_progress_dialog.dart';
 
+import '../../helper/print.dart';
 import '../api/api_services/api_download.dart';
 
 class SaveImageViewModel extends ChangeNotifier {
@@ -17,7 +18,7 @@ class SaveImageViewModel extends ChangeNotifier {
       var photosStatus = await Permission.photos.status;
       if (photosStatus.isDenied) {
         await Permission.photos.request();
-        print("Photos Permission Status$photosStatus");
+        printInDebug("Photos Permission Status$photosStatus");
       }
     } else {
       var photoStatus = await Permission.photos.status;
@@ -26,15 +27,15 @@ class SaveImageViewModel extends ChangeNotifier {
         await Permission.storage.request().then((value) {
           if (!value.isGranted) askPermission();
         });
-        print("Android Storage Permission Status: $storageStatus");
+        printInDebug("Android Storage Permission Status: $storageStatus");
       } else if (photoStatus.isDenied) {
         await Permission.photos.request().then((value) {
           if (!value.isGranted) askPermission();
         });
-        print("Android Photos Permission Status: $photoStatus");
+        printInDebug("Android Photos Permission Status: $photoStatus");
       }
       // Map<Permission, PermissionStatus> statuses = await [Permission.storage].request();
-      // print(statuses[Permission.storage]);
+      // printInDebug(statuses[Permission.storage]);
 
     }
   }
@@ -55,15 +56,15 @@ class SaveImageViewModel extends ChangeNotifier {
       await response.getUint8Photo(url);
       final res = response.uint8list;
       final result = await ImageGallerySaver.saveImage(Uint8List.fromList(res));
-      print(result);
-      print('default path: ${result['filePath']}');
+      printInDebug(result);
+      printInDebug('default path: ${result['filePath']}');
 
       pd.close();
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text('Photo Saved Successful'),
       ));
     } on PlatformException {
-      print('ERROR-->}');
+      printInDebug('ERROR-->}');
     }
   }
 }

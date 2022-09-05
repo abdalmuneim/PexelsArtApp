@@ -34,7 +34,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    FavoriteViewModel geFavoriteProv = Provider.of<FavoriteViewModel>(context,listen: false);
+    FavoriteViewModel geFavoriteProv = Provider.of<FavoriteViewModel>(context);
     return SafeArea(
       child: Scaffold(
         body: Hero(

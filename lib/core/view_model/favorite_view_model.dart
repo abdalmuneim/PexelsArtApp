@@ -8,6 +8,7 @@ class FavoriteViewModel extends ChangeNotifier {
 
   Future<int> addToFavorite({required FavoriteModel favorite}) {
     notifyListeners();
+    isFav(favorite.id);
     return DBHelper.insert(favorite);
   }
 
@@ -19,6 +20,7 @@ class FavoriteViewModel extends ChangeNotifier {
 
   void deleteFavorite(int id) async {
     await DBHelper.deleted(id);
+    isFav(id);
     getFavorite();
     notifyListeners();
   }
@@ -32,7 +34,6 @@ class FavoriteViewModel extends ChangeNotifier {
  late bool fav ;
 
   bool isFav(int id) {
-    
     return fav = favoriteList.any((meal) => meal.id == id);
   }
 }

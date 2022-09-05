@@ -17,6 +17,7 @@ class FavoriteScreen extends StatefulWidget {
 }
 
 class _FavoriteScreenState extends State<FavoriteScreen> {
+
   @override
   void initState() {
     final FavoriteViewModel getDataProv =
